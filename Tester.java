@@ -3,9 +3,9 @@ import java.util.Arrays;
 
 public class Tester{
 
-  public static int[] newArray(int sizeOfArray) {
+  public static int[] newArray(int seedValue, int sizeOfArray) {
     int[] newArray = new int[sizeOfArray];
-    Random rng = new Random();
+    Random rng = new Random(seedValue);
     for(int i =  0; i < sizeOfArray; i++ ){
       newArray[i] = (rng.nextInt() % 1000);
     }
