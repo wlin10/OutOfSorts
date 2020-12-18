@@ -1,5 +1,4 @@
-import java.util.Random;
-import java.util.Arrays;
+import java.util.*;
 
 public class Tester{
 
@@ -22,6 +21,15 @@ public class Tester{
 
 
   public static void main(String[]args){
-
+    Random x = new Random();
+    int limit = (Math.abs(x.nextInt() % 250));
+    for (int i = 0; i < limit; i++) {
+      for (int j = 0; j < limit; j++) {
+        if (!arrayChecker(i, j)) {
+          System.out.println("Tests Failed");
+        }
+      }
+    }
+    System.out.println("Tests Passed");
   }
 }
