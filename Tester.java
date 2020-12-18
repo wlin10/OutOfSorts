@@ -12,6 +12,14 @@ public class Tester{
     return newArray;
   }
 
+  public static boolean arrayChecker(int seedValue, int sizeOfArray) {
+    int[] arr1 = newArray(seedValue, sizeOfArray);
+    Sorts.bubbleSort(arr1);
+    int[] arr2 = newArray(seedValue, sizeOfArray);
+    Arrays.sort(arr2);
+    return (Arrays.equals(arr1, arr2));
+  }
+
 
   public static void main(String[]args){
 
