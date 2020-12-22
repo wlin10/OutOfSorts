@@ -27,6 +27,14 @@ public class Tester{
     return (Arrays.equals(arr1, arr2));
   }
 
+  public static boolean iArrayChecker(int seedValue, int sizeOfArray) {
+    int[] arr1 = newArray(seedValue, sizeOfArray);
+    Sorts.insertionSort(arr1);
+    int[] arr2 = newArray(seedValue, sizeOfArray);
+    Arrays.sort(arr2);
+    return (Arrays.equals(arr1, arr2));
+  }
+
   public static void reverse(int[] arr) {
     int[] arr1 = new int[arr.length];
     for (int i = 0; i < arr.length; i++) {
@@ -59,6 +67,17 @@ public class Tester{
     return (Arrays.equals(arr1, arr2));
   }
 
+  public static boolean iReverseArrayChecker(int seedValue, int sizeOfArray) {
+    int[] arr1 = newArray(seedValue, sizeOfArray);
+    Sorts.insertionSort(arr1);
+    reverse(arr1);
+    Arrays.sort(arr1);
+    int[] arr2 = newArray(seedValue, sizeOfArray);
+    Arrays.sort(arr2);
+    reverse(arr2);
+    Sorts.insertionSort(arr2);
+    return (Arrays.equals(arr1, arr2));
+  }
 
   public static void main(String[]args){
     Random x = new Random();
