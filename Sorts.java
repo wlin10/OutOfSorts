@@ -38,6 +38,15 @@ public class Sorts{
   *@param data - the elements to be sorted.
   */
    public static void insertionSort(int[] data){
+     for (int i = 1; i < data.length; i++) {
+       int temp = data[i];
+       int shifter = i - 1;
+       while (shifter >= 0 && data[shifter] > temp) {
+         data[shifter + 1] = data[shifter];
+         shifter--;
+       }
+       data[shifter + 1] = temp;
+     }
    }
 
 }
