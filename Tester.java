@@ -106,17 +106,22 @@ public class Tester{
         }
       }
     }
+    System.out.println("Tests Passed");
 
     int[] a = {1, 1, 3, 1, 2, 5};
     int[] b = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
-    int[] c = {};
+    int[] c = {8,8,8,8};
+    int[] d = {4};
+    int[] e = {};
     Sorts.bubbleSort(a);
-    Sorts.bubbleSort(b);
-    Sorts.bubbleSort(c);
+    Sorts.insertionSort(b);
+    Sorts.selectionSort(c);
+    Sorts.insertionSort(d);
+    Sorts.bubbleSort(e);
     System.out.println(Arrays.toString(a));
     System.out.println(Arrays.toString(b));
     System.out.println(Arrays.toString(c));
-
-    System.out.println("Tests Passed");
+    System.out.println(Arrays.toString(d));
+    System.out.println(Arrays.toString(e));
   }
 }
