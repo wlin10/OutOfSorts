@@ -11,9 +11,17 @@ public class Tester{
     return newArray;
   }
 
-  public static boolean arrayChecker(int seedValue, int sizeOfArray) {
+  public static boolean bArrayChecker(int seedValue, int sizeOfArray) {
     int[] arr1 = newArray(seedValue, sizeOfArray);
     Sorts.bubbleSort(arr1);
+    int[] arr2 = newArray(seedValue, sizeOfArray);
+    Arrays.sort(arr2);
+    return (Arrays.equals(arr1, arr2));
+  }
+
+  public static boolean sArrayChecker(int seedValue, int sizeOfArray) {
+    int[] arr1 = newArray(seedValue, sizeOfArray);
+    Sorts.selectionSort(arr1);
     int[] arr2 = newArray(seedValue, sizeOfArray);
     Arrays.sort(arr2);
     return (Arrays.equals(arr1, arr2));
@@ -27,7 +35,7 @@ public class Tester{
     arr = arr1;
   }
 
-  public static boolean reverseArrayChecker(int seedValue, int sizeOfArray) {
+  public static boolean bReverseArrayChecker(int seedValue, int sizeOfArray) {
     int[] arr1 = newArray(seedValue, sizeOfArray);
     Sorts.bubbleSort(arr1);
     reverse(arr1);
@@ -39,16 +47,28 @@ public class Tester{
     return (Arrays.equals(arr1, arr2));
   }
 
+  public static boolean sReverseArrayChecker(int seedValue, int sizeOfArray) {
+    int[] arr1 = newArray(seedValue, sizeOfArray);
+    Sorts.selectionSort(arr1);
+    reverse(arr1);
+    Arrays.sort(arr1);
+    int[] arr2 = newArray(seedValue, sizeOfArray);
+    Arrays.sort(arr2);
+    reverse(arr2);
+    Sorts.selectionSort(arr2);
+    return (Arrays.equals(arr1, arr2));
+  }
+
 
   public static void main(String[]args){
     Random x = new Random();
     int limit = (Math.abs(x.nextInt() % 250));
     for (int i = 0; i < limit; i++) {
       for (int j = 0; j < limit; j++) {
-        if (!arrayChecker(i, j)) {
+        if (!bArrayChecker(i, j) || !sArrayChecker(i, j)) {
           System.out.println("Tests Failed");
         }
-        if (!reverseArrayChecker(i, j)) {
+        if (!bReverseArrayChecker(i, j) || !bReverseArrayChecker(i, j)) {
           System.out.println("Tests Failed");
         }
       }
