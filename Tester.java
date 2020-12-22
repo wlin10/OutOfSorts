@@ -84,10 +84,24 @@ public class Tester{
     int limit = (Math.abs(x.nextInt() % 250));
     for (int i = 0; i < limit; i++) {
       for (int j = 0; j < limit; j++) {
-        if (!bArrayChecker(i, j) || !sArrayChecker(i, j)) {
+        if (!bArrayChecker(i, j) ||
+        !sArrayChecker(i, j) ||
+        !iArrayChecker(i, j)) {
           System.out.println("Tests Failed");
         }
-        if (!bReverseArrayChecker(i, j) || !bReverseArrayChecker(i, j)) {
+        if (!bReverseArrayChecker(i, j) ||
+        !bReverseArrayChecker(i, j) ||
+        !iReverseArrayChecker(i, j)) {
+          System.out.println("Tests Failed");
+        }
+        if (bArrayChecker(i, j) != sArrayChecker(i, j) ||
+        bArrayChecker(i, j) != iArrayChecker(i, j) ||
+        iArrayChecker(i, j) != sArrayChecker(i, j)) {
+          System.out.println("Tests Failed");
+        }
+        if (bReverseArrayChecker(i, j) != sReverseArrayChecker(i, j) ||
+        bReverseArrayChecker(i, j) != iReverseArrayChecker(i, j) ||
+        iReverseArrayChecker(i, j) != sReverseArrayChecker(i, j)) {
           System.out.println("Tests Failed");
         }
       }
